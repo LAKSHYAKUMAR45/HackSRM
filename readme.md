@@ -44,7 +44,4 @@ To use the Mental Health Support for Students app, follow these steps:
 3. Set up the required environment variables, including the OpenAI API key.
 4. Start the server using `npm start`.
 5. Access the app through your web browser.
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
+6. Download the files from these two links and copy them in your root directory https://drive.google.com/file/d/1QfHEgBIKm8ScNmMA1n3oJcrHiFp4QY4c/view?usp=share_link, https://drive.google.com/file/d/1r4m6Z4DwWNJ6nFZxku7Pgv7L9oJK-FLR/view?usp=share_link
