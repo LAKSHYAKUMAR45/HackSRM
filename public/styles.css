@@ -1,0 +1,102 @@
+/* Body background color */
+body {
+  background-color: #2B2B2B;
+  color: #fff;
+  font-family: 'Oxygen', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Container styles */
+.container {
+  background-color: #3C3F41;
+  padding: 20px;
+  border-radius: 5px;
+  margin: 20px;
+  height: calc(100vh - 40px); /* Calculate the height of the container */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-self: stretch;
+}
+
+/* Title styles */
+h1 {
+  font-family: 'Quintessential', cursive;
+  font-size: 32px;
+  letter-spacing: 2px;
+  text-align: center;
+  margin-top: 50px;
+  color: #fff;
+}
+
+/* Form container styles */
+.form-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-direction: column;
+}
+
+/* Form styles */
+form {
+  padding: 20px;
+  width: 48%; /* Adjust this value as needed */
+  box-sizing: border-box;
+}
+
+/* Left form styles */
+#registerForm {
+  background-color: #494B4D;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+/* Right form styles */
+#loginForm {
+  background-color: #494B4D;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+/* Form input styles */
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #494B4D;
+  color: #fff;
+}
+
+/* Form button styles */
+button {
+  background-color: #5C469C;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Horizontal line separator */
+.separator {
+  height: 1px;
+  background-color: #fff;
+  margin: 20px 0;
+}
+
+/* Link color */
+a {
+  color: #5C469C;
+}

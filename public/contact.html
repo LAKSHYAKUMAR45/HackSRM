@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Form - MindfulU</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Student Form</h1>
+      <a class="btn" href="dashboard.html">Return to Dashboard</a>
+    </div>
+    <form id="studentForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="issues">Issues:</label>
+      <textarea id="issues" name="issues" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+  <style>
+    body {
+  background-color: #2b2b2b;
+  color: #a9b7c6;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #f0f0f0;
+  margin: 0;
+}
+
+.btn {
+  padding: 10px 20px;
+  background-color: #3c3f41;
+  color: #a9b7c6;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+form {
+  width: 100%;
+  max-width: 600px;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 5px;
+  background-color: #3c3f41;
+  color: #a9b7c6;
+  border: 1px solid #464646;
+  border-radius: 4px;
+}
+
+textarea {
+  height: 120px;
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #3c3f41;
+  color: #a9b7c6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+  </style>
+</body>
+
+</html>

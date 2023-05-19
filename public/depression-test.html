@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hamilton Depression Rating Scale (HDRS)</title>
+  <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+  <h1>Hamilton Depression Rating Scale (HDRS)</h1>
+  <div class="container">
+    <form id="depressionForm">
+      <label for="q1">Depressed mood:</label>
+      <select id="q1" name="q1">
+        <option value="0">Absent</option>
+        <option value="1">These feeling states indicated only on questioning</option>
+        <option value="2">These feeling states spontaneously reported verbally</option>
+        <option value="3">Communicates feeling states non-verbally</option>
+        <option value="4">Patient reports virtually only these feeling states in his/her spontaneous verbal and non-verbal communication</option>
+      </select>
+
+      <label for="q2">Feelings of guilt:</label>
+      <select id="q2" name="q2">
+        <option value="0">Absent</option>
+        <option value="1">Self reproach, feels he/she has let people down</option>
+        <option value="2">Ideas of guilt or rumination over past errors or sinful deeds</option>
+        <option value="3">Present illness is a punishment. Delusions of guilt</option>
+        <option value="4">Hears accusatory or denunciatory voices and/or experiences threatening visual hallucinations</option>
+      </select>
+
+      <label for="q3">Suicide:</label>
+      <select id="q3" name="q3">
+        <option value="0">Absent</option>
+        <option value="1">Feels life is not worth living</option>
+        <option value="2">Wishes he/she were dead or any thoughts of possible death to self</option>
+        <option value="3">Ideas or gestures of suicide</option>
+        <option value="4">Attempts at suicide (any serious attempt rate 4)</option>
+      </select>
+
+      <label for="q4">Insomnia: Early in the night:</label>
+      <select id="q4" name="q4">
+        <option value="0">No difficulty falling asleep</option>
+        <option value="1">Complains of occasional difficulty falling asleep, i.e. more than 1/2 hour</option>
+        <option value="2">Complains of nightly difficulty falling asleep</option>
+      </select>
+
+      <label for="q5">Insomnia: Middle of the night:</label>
+      <select id="q5" name="q5">
+        <option value="0">No difficulty</option>
+        <option value="1">Patient complains of being restless and disturbed during the night</option>
+        <option value="2">Waking during the night – any getting out of bed rates 2 (except for purposes of voiding)</option>
+      </select>
+
+      <label for="q6">Insomnia: Early hours of the morning:</label>
+      <select id="q6" name="q6">
+        <option value="0">No difficulty</option>
+        <option value="1">Waking in early hours of the morning but goes back to sleep</option>
+        <option value="2">Unable to fall asleep again if he/she gets out of bed</option>
+      </select>
+
+      <label for="q7">Work and activities:</label>
+      <select id="q7" name="q7">
+        <option value="0">No difficulty</option>
+        <option value="1">Thoughts and feelings of incapacity, fatigue or weakness related to activities, work or hobbies</option>
+        <option value="2">Loss of interest in activity, hobbies or work – either directly reported by the patient or indirect in listlessness, indecision and vacillation (feels he/she has to push self to work or activities)</option>
+        <option value="3">Decrease in actual time spent in activities or decrease in productivity. Rate 3 if the patient does not spend at least three hours a day in activities (job or hobbies) excluding routine chores</option>
+        <option value="4">Stopped working because of present illness. Rate 4 if patient engages in no activities except routine chores, or if patient fails to perform routine chores unassisted</option>
+      </select>
+
+      <label for="q8">Retardation (slowness of thought and speech, impaired ability to concentrate, decreased motor activity):</label>
+      <select id="q8" name="q8">
+        <option value="0">Normal speech and thought</option>
+        <option value="1">Slight retardation during the interview</option>
+        <option value="2">Obvious retardation during the interview</option>
+        <option value="3">Interview difficult</option>
+        <option value="4">Complete stupor</option>
+      </select>
+
+      <label for="q9">Agitation:</label>
+      <select id="q9" name="q9">
+        <option value="0">None</option>
+        <option value="1">Fidgetiness</option>
+        <option value="2">Playing with hands, hair, etc.</option>
+        <option value="3">Moving about, can't sit still</option>
+        <option value="4">Hand wringing, nail biting, hair-pulling, biting of lips</option>
+      </select>
+
+      <label for="q10">Anxiety Psychic:</label>
+      <select id="q10" name="q10">
+        <option value="0">No difficulty</option>
+        <option value="1">Subjective tension and irritability</option>
+        <option value="2">Worrying about minor matters</option>
+        <option value="3">Apprehensive attitude apparent in face or speech</option>
+        <option value="4">Fears expressed without questioning</option>
+      </select>
+
+      <label for="q11">Anxiety Somatic (physiological concomitants of anxiety):</label>
+      <select id="q11" name="q11">
+        <option value="0">Absent</option>
+        <option value="1">Mild</option>
+        <option value="2">Moderate</option>
+        <option value="3">Severe</option>
+        <option value="4">Incapacitating</option>
+      </select>
+
+      <label for="q12">Somatic Symptoms Gastro-Intestinal:</label>
+      <select id="q12" name="q12">
+        <option value="0">None</option>
+        <option value="1">Loss of appetite but eating without staff encouragement. Heavy feelings in abdomen</option>
+        <option value="2">Difficulty eating without staff urging. Requests or requires laxatives or medication for bowels or medication for gastro-intestinal symptoms</option>
+      </select>
+
+      <label for="q13">General Somatic Symptoms:</label>
+      <select id="q13" name="q13">
+        <option value="0">None</option>
+        <option value="1">Heaviness in limbs, back or head. Backaches, headaches, muscle aches. Loss of energy and fatigability</option>
+        <option value="2">Any clear-cut symptom rates 2</option>
+      </select>
+
+      <label for="q14">Genital Symptoms (symptoms such as loss of libido, menstrual disturbances):</label>
+      <select id="q14" name="q14">
+        <option value="0">Absent</option>
+        <option value="1">Mild</option>
+        <option value="2">Severe</option>
+      </select>
+
+      <label for="q15">Hypochondriasis:</label>
+      <select id="q15" name="q15">
+        <option value="0">Not present</option>
+        <option value="1">Self-absorption (bodily)</option>
+        <option value="2">Preoccupation with health</option>
+        <option value="3">Frequent complaints, requests for help, etc.</option>
+        <option value="4">Hypochondriacal delusions</option>
+      </select>
+
+      <label for="q16">Loss of Weight:</label>
+      <select id="q16" name="q16">
+        <option value="0">No weight loss</option>
+        <option value="1">Probable weight loss associated with present illness</option>
+        <option value="2">Definite (according to patient) weight loss</option>
+        <option value="3">Not assessed</option>
+      </select>
+
+      <label for="q17">Insight:</label>
+      <select id="q17" name="q17">
+        <option value="0">Acknowledges being depressed and ill</option>
+        <option value="1">Acknowledges illness but attributes cause to bad food, climate, overwork, virus, need for rest, etc.</option>
+        <option value="2">Denies being ill at all</option>
+      </select>
+
+      <button type="submit" onclick="calculateScore()">Submit</button>
+
+    </form>
+
+    <div id="score"></div>
+
+
+
+    <script>
+        function calculateScore() {
+          var score = 0;
+      
+          // Retrieve the selected values from the dropdowns
+          var q1 = parseInt(document.getElementById('q1').value);
+          var q2 = parseInt(document.getElementById('q2').value);
+          var q3 = parseInt(document.getElementById('q3').value);
+          var q4 = parseInt(document.getElementById('q4').value);
+          var q5 = parseInt(document.getElementById('q5').value);
+          var q6 = parseInt(document.getElementById('q6').value);
+          var q7 = parseInt(document.getElementById('q7').value);
+          var q8 = parseInt(document.getElementById('q8').value);
+          var q9 = parseInt(document.getElementById('q9').value);
+          var q10 = parseInt(document.getElementById('q10').value);
+          var q11 = parseInt(document.getElementById('q11').value);
+          var q12 = parseInt(document.getElementById('q12').value);
+          var q13 = parseInt(document.getElementById('q13').value);
+          var q14 = parseInt(document.getElementById('q14').value);
+          var q15 = parseInt(document.getElementById('q15').value);
+          var q16 = parseInt(document.getElementById('q16').value);
+          var q17 = parseInt(document.getElementById('q17').value);
+      
+          // Calculate the total score
+          score = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10 + q11 + q12 + q13 + q14 + q15 + q16 + q17;
+      
+          // Display the score to the user
+          document.getElementById('score').innerHTML = "Total score: " + score;
+        }
+      </script>
+
+  <style>
+/*   
+        body {
+  background-color: #2b2b2b;
+  color: #a9b7c6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #e6e1dc;
+  text-align: center;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #323232;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  background-color: #4a4a4a;
+  color: #a9b7c6;
+  border-radius: 5px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  background-color: #5f9ea0;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+}
+
+button[type="submit"]:hover {
+  background-color: #4682b4;
+}
+
+#score {
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  color: #ffffff;
+} --> */
+body {
+  background-color: #2b2b2b;
+  color: #a9b7c6;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+h1 {
+  color: #f0f0f0;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+select {
+  margin-bottom: 10px;
+  padding: 5px;
+  width: 100%;
+  background-color: #3c3f41;
+  color: #a9b7c6;
+  border: 1px solid #464646;
+  border-radius: 4px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #3c3f41;
+  color: #a9b7c6;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#result {
+  font-weight: bold;
+  margin-top: 10px;
+}
+      </style>
+      
+  </body>
+</html>

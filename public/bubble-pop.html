@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bubble Pop Game - MindfulU</title>
+  <style>
+    body {
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      text-align: center;
+    }
+
+    h1 {
+      color: #fff;
+    }
+
+    #gameBoard {
+      margin-top: 20px;
+    }
+
+    .bubble {
+      display: inline-block;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .small {
+      background-color: #ff7f50;
+    }
+
+    .medium {
+      background-color: #ffa500;
+    }
+
+    .large {
+      background-color: #ffd700;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>MindfulU</h1>
+    <div id="gameBoard"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const gameBoard = document.getElementById('gameBoard');
+      const bubbleColors = ['red', 'blue', 'green', 'yellow'];
+      const bubbleSizes = ['small', 'medium', 'large'];
+      const maxBubbles = 10;
+
+      // Generate random number within a range
+      function getRandomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      // Generate a random bubble
+      function generateBubble() {
+        const bubble = document.createElement('div');
+        bubble.classList.add('bubble');
+
+        const randomColor = bubbleColors[getRandomNumber(0, bubbleColors.length - 1)];
+        const randomSize = bubbleSizes[getRandomNumber(0, bubbleSizes.length - 1)];
+
+        bubble.classList.add(randomSize);
+        bubble.style.backgroundColor = randomColor;
+
+        bubble.addEventListener('click', popBubble);
+
+        return bubble;
+      }
+
+      // Pop the clicked bubble
+      function popBubble(event) {
+        const bubble = event.target;
+        bubble.classList.add('popped');
+        bubble.removeEventListener('click', popBubble);
+        setTimeout(() => {
+          bubble.remove();
+        }, 200);
+      }
+
+      // Generate bubbles on the game board
+      for (let i = 0; i < maxBubbles; i++) {
+        const bubble = generateBubble();
+        gameBoard.appendChild(bubble);
+      }
+    });
+  </script>
+</body>
+
+</html>

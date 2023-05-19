@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Word Search Game - Darcula Theme</title>
+  <style>
+    /* Darcula Theme Styles */
+    body {
+      background-color: #2b2b2b;
+      color: #a9b7c6;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .word-search {
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+      gap: 4px;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .word-search-cell {
+      width: 40px;
+      height: 40px;
+      background-color: #3a3a3a;
+      border: 1px solid #555555;
+      text-align: center;
+      line-height: 40px;
+      font-size: 16px;
+    }
+
+    .word-search-word {
+      margin-top: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Word Search Game</h1>
+    <div class="word-search">
+      <script>
+        // Word Search Grid
+        const wordSearchGrid = [
+          ['W', 'O', 'R', 'D', 'S', 'E', 'A', 'R', 'C', 'H'],
+          ['G', 'A', 'M', 'E', 'O', 'L', 'K', 'E', 'P', 'H'],
+          ['R', 'U', 'L', 'E', 'S', 'L', 'A', 'C', 'A', 'D'],
+          ['P', 'L', 'A', 'Y', 'E', 'R', 'S', 'C', 'O', 'M'],
+          ['S', 'E', 'T', 'H', 'O', 'U', 'R', 'S', 'T', 'E'],
+          ['I', 'T', 'O', 'P', 'E', 'N', 'A', 'T', 'T', 'A'],
+          ['M', 'I', 'D', 'N', 'I', 'G', 'H', 'T', 'P', 'L'],
+          ['E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'],
+          ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'],
+          ['T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'A', 'B', 'C'],
+        ];
+
+        // Words to Find
+        const wordsToFind = [
+          'WORD',
+          'SEARCH',
+          'GAME',
+          'PLAYER',
+          'HOUR',
+          'OPEN',
+          'NIGHT',
+          'RULES',
+          'COM',
+          'AT',
+        ];
+
+        // Function to create the Word Search grid
+        function createWordSearchGrid() {
+          const wordSearchElement = document.createElement('div');
+          wordSearchElement.classList.add('word-search');
+
+          for (let row = 0; row < wordSearchGrid.length; row++) {
+            for (let col = 0; col < wordSearchGrid[row].length; col++) {
+              const cell = document.createElement('div');
+              cell.classList.add('word-search-cell');
+              cell.textContent = wordSearchGrid[row][col];
+              wordSearchElement.appendChild(cell);
+            }
+          }
+
+          document.body.appendChild(wordSearchElement);
+        }
+
+        // Function to display the words to find
+        function displayWordsToFind() {
+          const wordsElement = document.createElement('div');
+          wordsElement.classList.add('word-search-word');
+
+          for (let i = 0; i < wordsToFind.length; i++) {
+            const wordElement = document.createElement('span');
+            wordElement.textContent = wordsToFind[i];
+            wordsElement.appendChild(wordElement);
+
+            if (i !== wordsToFind.length - 1) {
+              wordsElement.appendChild(document.createTextNode(', '));
+            }
+          }
+
+          document.body.appendChild(wordsElement);
+        }
+
+        // Call the functions to create the Word Search grid and display the words to find
+        createWordSearchGrid();
+        displayWordsToFind();
+      </script>
+    </div>
+  </div>
+</body>
+
+</html>

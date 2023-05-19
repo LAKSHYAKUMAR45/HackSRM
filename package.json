@@ -1,0 +1,30 @@
+{
+  "name": "mindfulu",
+  "version": "1.0.0",
+  "description": "Student mental health assistance app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "gpt3",
+    "node",
+    "html",
+    "css",
+    "NLP",
+    "ML",
+    "DL",
+    "Docker"
+  ],
+  "author": "Lakshya Kumar",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "deepspeech": "^0.9.3",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jquery": "^3.7.0",
+    "mongoose": "^7.1.1",
+    "openai": "^3.2.1"
+  }
+}

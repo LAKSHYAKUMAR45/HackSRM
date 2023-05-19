@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - MindfulU</title>
+</head>
+
+<body>
+  <style>
+    /* Your CSS styles here */
+    
+    body {
+      background-color: #2B2B2B;
+      color: #fff;
+      font-family: 'Oxygen', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      font-family: 'Quintessential', cursive;
+      font-size: 90px;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-top: 30px;
+      color: #fff;
+    }
+
+    button {
+      background-color: #5C469C;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 24px;
+    }
+
+    .dashboard {
+      display: flex;
+    }
+
+    .dashboard button {
+      margin-left: 10px;
+    }
+
+    .transcription-display {
+      padding: 10px;
+      margin-bottom: 20px;
+      width: 100%;
+      height: 100px;
+    }
+
+    .speech-to-text-container {
+      margin-bottom: 20px;
+    }
+
+    .fun-zone,
+    .relaxation-zone,
+    .tests {
+      margin-bottom: 20px;
+    }
+
+    .games button,
+    .meditation button,
+    .test-buttons button {
+      margin-right: 10px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+  </style>
+
+  <div class="container">
+    <div class="topbar">
+      <h1 class="title">MindfulU</h1>
+      <div class="dashboard">
+        <button id="conversationHistoryBtn">Conversation History</button>
+        <button id="settingsBtn">Settings</button>
+      </div>
+    </div>
+
+    <div class="transcription-display" id="transcriptionDisplay"></div>
+
+    <div class="speech-to-text-container">
+      <button id="speechToTextBtn">Press to Speak</button>
+    </div>
+
+    <div class="fun-zone">
+      <h2>Fun Zone</h2>
+      <div class="games">
+        <button id="memoryGameBtn">Play Memory Game</button>
+        <button id="bubblePopBtn">Bubble Pop Game</button>
+        <button id="wordSearchBtn">Word Search Game</button>
+        <button id="gameOfThePiggyBtn">Game of the Piggy</button>
+        <button id="guessMyNumberBtn">Guess My Number</button>
+      </div>
+    </div>
+
+    <div class="relaxation-zone">
+      <h2>Relaxation Zone</h2>
+      <div class="meditation">
+        <button id="meditationBtn">Start Meditation</button>
+        <button id="whiteNoiseBtn">White Noise Machine</button>
+        <button id="tipsBtn">Helpful Advice</button>
+      </div>
+    </div>
+
+    <div class="tests">
+      <h2>Feeling tensed? Why don't you check out these and get yourself tested.</h2>
+      <div class="test-buttons">
+        <button id="anxietyTestBtn">Take Anxiety Test</button>
+        <button id="depressionTestBtn">Take Depression Test</button>
+        <button id="adhdTestBtn">Take ADHD Test</button>
+      </div>
+    </div>
+
+    <div class="contact">
+      <h2>NEED HELP? REACH OUT TO US TODAY!</h2>
+      <button id="contactBtn">Contact Us</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const conversationHistoryBtn = document.getElementById('conversationHistoryBtn');
+      const settingsBtn = document.getElementById('settingsBtn');
+      const anxietyTestBtn = document.getElementById('anxietyTestBtn');
+      const depressionTestBtn = document.getElementById('depressionTestBtn');
+      const adhdTestBtn = document.getElementById('adhdTestBtn');
+      const memoryGameBtn = document.getElementById('memoryGameBtn');
+      const bubblePopBtn = document.getElementById('bubblePopBtn');
+      const meditationBtn = document.getElementById('meditationBtn');
+      const whiteNoiseBtn = document.getElementById('whiteNoiseBtn');
+      const transcriptionDisplay = document.getElementById('transcriptionDisplay');
+      const speechToTextBtn = document.getElementById('speechToTextBtn');
+      const tipsBtn = document.getElementById('tipsBtn');
+      const contactBtn = document.getElementById('contactBtn');
+
+      conversationHistoryBtn.addEventListener('click', goToHistory);
+      settingsBtn.addEventListener('click', goToSettings);
+      anxietyTestBtn.addEventListener('click', goToAnxietyTest);
+      depressionTestBtn.addEventListener('click', goToDepressionTest);
+      adhdTestBtn.addEventListener('click', goToADHDTest);
+      memoryGameBtn.addEventListener('click', goToMemoryGame);
+      bubblePopBtn.addEventListener('click', goToBubblePop);
+      meditationBtn.addEventListener('click', goToMeditation);
+      speechToTextBtn.addEventListener('click', startSpeechToText);
+      tipsBtn.addEventListener('click', goToTips);
+      contactBtn.addEventListener('click', goToContact);
+      whiteNoiseBtn.addEventListener('click', goToWhiteNoise);
+
+      function goToWhiteNoise() {
+        window.location.href = 'white-noise.html';
+      }
+
+      function goToContact() {
+        window.location.href = 'contact.html';
+      }
+
+      function goToTips() {
+        window.location.href = 'tips.html';
+      }
+
+      function goToHistory() {
+        window.location.href = 'conversation-history.html';
+      }
+
+      function goToSettings() {
+        window.location.href = 'settings.html';
+      }
+
+      function goToAnxietyTest() {
+        window.location.href = 'anxiety-test.html';
+      }
+
+      function goToDepressionTest() {
+        window.location.href = 'depression-test.html';
+      }
+
+      function goToADHDTest() {
+        window.location.href = 'adhd-test.html';
+      }
+
+      function goToMemoryGame() {
+        window.location.href = 'memory-game.html';
+      }
+
+      function goToBubblePop() {
+        window.location.href = 'bubble-pop.html';
+      }
+
+      function goToMeditation() {
+        window.location.href = 'meditation.html';
+      }
+
+      function startSpeechToText() {
+        if ('webkitSpeechRecognition' in window) {
+          const recognition = new webkitSpeechRecognition();
+          recognition.lang = 'en-US';
+          recognition.start();
+
+          // Change the button color to indicate recording
+          speechToTextBtn.style.backgroundColor = 'red';
+
+          recognition.onresult = function (event) {
+            const result = event.results[0][0].transcript;
+            console.log('Transcription:', result);
+            gpt3Conversation(result);
+          };
+
+          recognition.onerror = function (event) {
+            console.error('Error during speech recognition:', event.error);
+          };
+
+          recognition.onend = function () {
+            // Change the button color back to default
+            speechToTextBtn.style.backgroundColor = '';
+          };
+        } else {
+          console.error('Speech recognition is not supported in your browser.');
+        }
+      }
+
+      function gpt3Conversation(transcription) {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer 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'
+    },
+    body: JSON.stringify({
+      prompt: 'User: ' + transcription + '\nAI:',
+      model: 'text-davinci-003',
+      max_tokens: 2048,
+      n: 1,
+      temperature: 0.7
+    })
+  };
+
+  fetch('https://api.openai.com/v1/completions', requestOptions)
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(data => {
+      const completion = data.choices[0].text;
+      console.log('AI:', completion);
+      transcriptionDisplay.innerHTML = '<p>User: ' + transcription + '</p><p>AI: ' + completion + '</p>';
+      speakText(completion);
+      
+      // Save conversation in the database
+      saveConversation(transcription, completion);
+    })
+    .catch(error => {
+      console.error('Error during GPT-3 conversation:', error);
+    });
+}
+
+function saveConversation(question, response) {
+  const requestOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ question, response })
+  };
+
+  fetch('http://localhost:3000/conversation', requestOptions) // Updated the URL to include the correct endpoint
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Error: ' + response.status);
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log('Conversation saved:', data);
+    })
+    .catch(error => {
+      console.error('Error saving conversation:', error);
+    });
+}
+
+
+      function speakText(text) {
+        const utterance = new SpeechSynthesisUtterance(text);
+        speechSynthesis.speak(utterance);
+      }
+
+      speechToTextBtn.addEventListener('click', startSpeechToText);
+    });
+  </script>
+  <script>
+    // Add event listeners to the buttons
+    document.getElementById('gameOfThePiggyBtn').addEventListener('click', function () {
+      // Handle Game of the Piggy button click
+      window.location.href = 'https://gameofthepiggy.netlify.app/';
+    });
+  
+    document.getElementById('guessMyNumberBtn').addEventListener('click', function () {
+      // Handle Guess My Number button click
+      window.location.href = 'https://app.netlify.com/sites/guessmynumber47/overview';
+    });
+  </script>
+  
+  
+</body>
+
+</html>

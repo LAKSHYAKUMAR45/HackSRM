@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game - MindfulU</title>
+  <style>
+    body {
+      background-color: #2b2b2b;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .memory-game {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .memory-card {
+      width: 100px;
+      height: 100px;
+      margin: 10px;
+      background-color: #3a3a3a;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 5px;
+    }
+
+    .memory-card.active,
+    .memory-card.matched {
+      background-color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .memory-card {
+        width: 80px;
+        height: 80px;
+        margin: 5px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>MindfulU</h1>
+    <div class="memory-game"></div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const memoryGameContainer = document.querySelector('.memory-game');
+      const images = [
+        'image1.jpg',
+        'image2.jpg',
+        'image3.jpg',
+        'image4.jpg',
+        'image5.jpg',
+        'image6.jpg',
+      ];
+
+      const cards = images.concat(images); // Duplicate the images to create pairs
+
+      shuffleArray(cards); // Shuffle the cards array
+
+      cards.forEach((card) => {
+        const memoryCard = document.createElement('div');
+        memoryCard.classList.add('memory-card');
+        memoryCard.style.backgroundImage = `url(images/${card})`; // Set the card's background image
+
+        memoryCard.addEventListener('click', handleCardClick);
+
+        memoryGameContainer.appendChild(memoryCard);
+      });
+
+      let activeCards = [];
+      let matchedCards = [];
+
+      function handleCardClick() {
+        const card = this;
+
+        if (card.classList.contains('active') || card.classList.contains('matched')) {
+          return;
+        }
+
+        card.classList.add('active');
+
+        if (activeCards.length === 1) {
+          const previousCard = activeCards[0];
+
+          if (previousCard.style.backgroundImage === card.style.backgroundImage) {
+            card.classList.add('matched');
+            previousCard.classList.add('matched');
+
+            matchedCards.push(card, previousCard);
+
+            if (matchedCards.length === cards.length) {
+              setTimeout(showGameCompleteMessage, 500);
+            }
+          } else {
+            setTimeout(() => {
+              card.classList.remove('active');
+              previousCard.classList.remove('active');
+            }, 500);
+          }
+
+          activeCards = [];
+        } else {
+          activeCards.push(card);
+        }
+      }
+
+      function showGameCompleteMessage() {
+        alert('Congratulations! You have matched all the cards!');
+      }
+
+      // Function to shuffle the array
+      function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>
